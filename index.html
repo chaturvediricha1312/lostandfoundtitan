@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lost & Found Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h1><b>🎒 Lost & Found</b></h1>
+    <button onclick="toggleTheme()">🌙</button>
+    <button onclick="logout()">Logout</button>
+    <h3 id="points"></h3>
+<h3 id="badge"></h3>
+</div>
+
+<div class="main">
+
+    <div class="form-section">
+        <div class="form-card">
+            <h2>Report Item</h2>
+
+            
+            <input type="text" id="name" placeholder="Item Name">
+            <input type="text" id="desc" placeholder="Description">
+            <input type="text" id="location" placeholder="Location">
+            <input type="text" id="contact" placeholder="Contact Info">
+            <input type="number" id="value" placeholder="Estimated Value (₹)">
+
+            <select id="type">
+                <option value="Lost">Lost</option>
+                <option value="Found">Found</option>
+            </select>
+
+            <select id="category">
+                <option value="General">General</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Documents">Documents</option>
+            </select>
+
+            <input type="file" id="image" onchange="previewImage()">
+            <img id="preview">
+
+           <button type="button" onclick="addItem()">Submit</button>
+        </div>
+    </div>
+
+   
+    <div class="items-section">
+        <input type="text" id="search" placeholder="🔍 Search items...">
+        <div id="items"></div>
+    </div>
+
+</div>
+<div class="filters">
+    <button onclick="filterItems('all')">All</button>
+    <button onclick="filterItems('Lost')">Lost</button>
+    <button onclick="filterItems('Found')">Found</button>
+    <button onclick="filterItems('unclaimed')">Unclaimed</button>
+</div>
+<div class="stats">
+    <div>Total: <span id="total"></span></div>
+    <div>Lost: <span id="lostCount"></span></div>
+    <div>Found: <span id="foundCount"></span></div>
+</div>
+<div id="toast"></div>
+<h3 id="user"></h3>
+<script src="script.js"></script>
+</body>
+</html>
